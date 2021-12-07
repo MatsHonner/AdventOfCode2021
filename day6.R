@@ -88,7 +88,7 @@ for (i in 1:256) {
   board[9] <- was_one
 }
 
-sum(board)
+answer <- sum(board)
 
 
 
