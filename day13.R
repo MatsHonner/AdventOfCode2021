@@ -79,6 +79,8 @@ sum(m)
 
 # fold along x
 m <- t(m)
+max_x <- ncol(m)
+max_y <- nrow(m)
 upper_part <- m[1:(commands$steps[1]-1), 1:max_x]
 lower_part <- m[(commands$steps[1]+1):max_y, 1:max_x]
 mirror_lower_part <- matrix(0, nrow = min(nrow(upper_part), nrow(lower_part)), ncol = min(ncol(upper_part), ncol(lower_part)))
@@ -88,5 +90,7 @@ for (i in 1:nrow(mirror_lower_part)) {
 m <- upper_part + mirror_lower_part
 m[m>=2] <- 1
 m <- t(m)
+max_x <- ncol(m)
+max_y <- nrow(m)
 sum(m)
 
